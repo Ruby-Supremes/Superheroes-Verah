@@ -4,7 +4,7 @@
 This project was built with the following tools:
 
 - [Ruby ~ v3.1.+](https://www.ruby-lang.org/en/)
-
+- [Postgresql ~ v12.12](https://guides.rubyonrails.org/active_record_postgresql.html)
 ## Installation
 
 To use this repo on your machine requires some simple steps

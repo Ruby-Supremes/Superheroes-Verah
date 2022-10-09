@@ -2,6 +2,7 @@ class PowersController < ApplicationController
 
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     rescue_from ActiveRecord::RecordInvalid, with: :create_error
+   
     
     def index
         powers = Power.all
@@ -28,7 +29,7 @@ class PowersController < ApplicationController
 
     def update
         power = find_power
-        power.update(power_params)
+        power.update!(power_param)
         render json: power
     end
 

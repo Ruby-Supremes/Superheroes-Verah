@@ -5,7 +5,7 @@ class HeroPowersController < ApplicationController
     
     def index
         heropowers = HeroPower.all
-        render json: heropowers
+        render json: heropowers, include: ['strength','power_id','hero_id']
     end
 
     def show
@@ -20,10 +20,10 @@ class HeroPowersController < ApplicationController
       head :no_content
     end
 
-  # create hero
+  # create heropowers
   def create
-    hero = HeroPower.create!(heropower_param)
-    render json: hero,  status: 201
+    HeroPower.create!(heropower_param)
+    render json: Hero.find_by(id: heropower_param[:hero_id]),status: :created
   end
 
   private 

@@ -29,7 +29,7 @@ class PowersController < ApplicationController
 
     def update
         power = find_power
-        power.update!(power_param)
+        power.update!(update_param)
         render json: power
     end
 
@@ -50,5 +50,9 @@ class PowersController < ApplicationController
     def power_param
     params.permit(:name, :description)
     end
+
+    def update_param
+        params.permit(:description)
+        end
     
 end
